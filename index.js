@@ -1,45 +1,41 @@
-var chocolateBars = ['snickers', 'hundred grand', 'kitkat', 'skittles']
+const drivers = ['Milo', 'Otis', 'Garfield'];
 
-function addElementToBeginningOfArray(array, element){
-  array = [element, ...array];
-  return array;
+function destructivelyAppendDriver(name){
+  drivers.push(name);
+  return drivers;
+};
+
+function destructivelyPrependDriver(name){
+  drivers.unshift(name);
+  return drivers;
 }
 
-function destructivelyAddElementToBeginningOfArray(array, element){
-  array.unshift(element);
-  return array;
+function destructivelyRemoveLastDriver(name){
+  drivers.pop(name);
+  return drivers;
 }
 
-function addElementToEndOfArray(array, element){
-array = [...array, element];
-return array;
+function destructivelyRemoveFirstDriver(name){
+  drivers.shift(name);
+  return drivers;
 }
 
-function destructivelyAddElementToEndOfArray(array, element) {
-array.push(element);
-return array;
+function appendDriver(name){
+  const newDrivers = [...drivers, name];
+  return newDrivers;
+};
+
+function prependDriver(name){
+  const newDrivers = [name, ...drivers];
+  return newDrivers;
 }
 
-function accessElementInArray(array, index){
-  return array[index];
-}
+function removeLastDriver(){
+  const newDrivers = drivers.slice(0, drivers.length-1)
+  return newDrivers;
+};
 
-function destructivelyRemoveElementFromBeginningOfArray(array){
-  array.shift();
-  return array;
-}
-
-function removeElementFromBeginningOfArray(array){
-  array = array.slice(1);
-  return array;
-}
-
-function destructivelyRemoveElementFromEndOfArray(array){
-  array.pop();
-  return array;
-}
-
-function removeElementFromEndOfArray(array){
-  array = array.slice(0, array.length - 1);
-  return array;
+function removeFirstDriver(){
+  const newDrivers = drivers.slice(1);
+  return newDrivers;
 }
